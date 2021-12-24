@@ -29,9 +29,6 @@ public class Profile {
     @Column(name = "currentProject",updatable = true,nullable = true)
     private String currentProject;
 
-//    @Column(name = "cv",updatable = true,nullable = true)
-//    private String cv;
-
     @Column(name="isManager",updatable = true,columnDefinition = "boolean default false")
     private boolean isManager;
 

@@ -72,18 +72,16 @@ public class ProjectApplication {
 					}
 					pro.setTitle( work.get("title").toString());
 					pros.add(pro);
-//					profileService.addProfile(pro);
 				}
-//				for (Profile mm:pros) {
-//					System.out.println(mm.getFullName());
-//				}
-//				profileService.addAllProfiles(pros);
-//				System.out.println(pros.size());
+				for (Profile mm:pros) {
+					System.out.println(mm.getFullName());
+				}
+				profileService.addAllProfiles(pros);
+				System.out.println(pros.size());
 
 			}catch (IOException e){
 				e.printStackTrace();
 			}
-//				profileService.addAllProfiles(pros);
 		};
 	}
 }
