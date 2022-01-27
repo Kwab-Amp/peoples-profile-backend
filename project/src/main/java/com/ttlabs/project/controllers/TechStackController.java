@@ -22,17 +22,17 @@ public class TechStackController {
 //    }
 
     @PostMapping(path = "/save-tech-stack/{email}")
-    public Response saveTechStack(@PathVariable String email, @RequestBody TechStack techStack){
-        return techStackService.addATechStack(techStack,email);
+    public void saveTechStack(@PathVariable String email, @RequestBody TechStack techStack){
+         techStackService.addATechStack(techStack,email);
     }
 
     @GetMapping()
-    public Response getAll() {
-        return new Response(true, "Hello World");
+    public List<TechStack> getAll() {
+        return techStackService.getAllTechStacks();
     }
 
-    @PostMapping(name = "save-list-of-tech-stack/list/{email}")
-    public Response saveListOfTechStack(@PathVariable String email, @RequestBody List<TechStack> techStackList){
-        return techStackService.addListOfTechStack(techStackList,email);
+    @PostMapping(path = "/save-list-of-tech-stack/list/{email}")
+    public void saveListOfTechStack(@PathVariable String email, @RequestBody List<TechStack> techStackList){
+        techStackService.addListOfTechStack(techStackList,email);
     }
 }

@@ -24,27 +24,27 @@ public class TechStackServiceImpl implements TechStackService{
     }
 
     @Override
-    public Response addATechStack(TechStack techStack,String email) {
+    public void addATechStack(TechStack techStack,String email) {
         Profile profile = profileRepository.findByEmail(email);
         techStack.setProfile(profile);
         TechStack res =  techStackRepository.save(techStack);
-        return new Response(true,res);
+//        return new Response(true,res);
     }
 
     @Override
-    public Response addListOfTechStack(List<TechStack> techStacks,String email) {
+    public void addListOfTechStack(List<TechStack> techStacks,String email) {
         Profile profile = profileRepository.findByEmail(email);
         for (TechStack techStack:techStacks) {
             techStack.setProfile(profile);
         }
         List<TechStack> res = techStackRepository.saveAll(techStacks);
-        return new Response(true,res);
+//        return new Response(true,res);
     }
 
     @Override
-    public Response getAllTechStacks() {
+    public List<TechStack> getAllTechStacks() {
         List<TechStack> techStacks = techStackRepository.findAll();
-        return new Response(true,techStacks);
+        return techStacks;
     }
 
     @Override

@@ -6,10 +6,10 @@ import com.ttlabs.project.models.TechStack;
 import java.util.List;
 
 public interface TechStackService {
-    Response addATechStack(TechStack techStack,String email);
-    Response addListOfTechStack(List<TechStack> techStacks,String email);
+    void addATechStack(TechStack techStack,String email);
+    void addListOfTechStack(List<TechStack> techStacks,String email);
 
-    Response getAllTechStacks();
+    List<TechStack> getAllTechStacks();
 //    Response getATechStackByEmail(String email);
     Response updateTechStack(TechStack techStack);
     Response deleteTechStack(Long techStackId);
