@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class TechStackServiceImpl implements TechStackService{
@@ -73,7 +74,7 @@ public class TechStackServiceImpl implements TechStackService{
 
     @Override
     public Response findTechStackByName(String techStackName) {
-        List<TechStack> res = techStackRepository.findByTechStackName(techStackName);
+        List<TechStack> res = techStackRepository.findByStackName(techStackName);
         return new Response(true,res);
     }
 }

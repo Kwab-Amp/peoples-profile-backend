@@ -35,7 +35,7 @@ public class Profile {
     @Column(name = "site",nullable = true)
     private String site;
 
-    @OneToMany(mappedBy = "profile",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "profile")
     private Set<TechStack> techStack;
 
 

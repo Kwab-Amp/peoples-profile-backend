@@ -11,4 +11,5 @@ public interface ProfileService {
     void updateProfile(Long profileId,String currentProject,String title,String department,String fullName,boolean isManager);
     List<Profile> getEmployeeProfiles();
     void  deleteProfile(Long profileId);
+    Profile findOne(String email);
 }

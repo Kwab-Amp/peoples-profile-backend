@@ -1,6 +1,7 @@
 package com.ttlabs.project.models;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "TechStack")
@@ -16,7 +17,7 @@ public class TechStack {
     @Column(name = "experienceLevel")
     private String experienceLevel;
 
-    @ManyToMany(fetch=FetchType.LAZY)
+    @ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name = "profile_id",nullable = false)
     private Profile profile;
 
