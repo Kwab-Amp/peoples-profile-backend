@@ -51,7 +51,7 @@ public class ProjectApplication {
 			ArrayList<Profile> pros = new ArrayList<>();
 			ArrayList<Map> bob = new ArrayList<Map>();
 			String url = "https://api.hibob.com/v1/people";
-			Request request = new Request.Builder().url(url).addHeader("Authorization", "4drMC7Hjcjf4kTxyriFFhc53G3PVi4BRUH3SiFrP").addHeader("Accept", "application/json").build();
+			Request request = new Request.Builder().url(url).addHeader("Authorization", "key").addHeader("Accept", "application/json").build();
 			Call call = client.newCall(request);
 			Response response = call.execute();
 			String myResult = response.body().string();
